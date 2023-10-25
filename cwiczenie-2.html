@@ -22,8 +22,17 @@
 	
 		function sprawdz()
 		{
-			
-			
+			var age=document.getElementById("wiek").value;
+
+			if(age<16){
+				document.getElementById("wynik").innerHTML="Nie może wziąć udziału w seansie";
+			}else if(age>=16 && age<18){
+				document.getElementById("wynik").innerHTML="Może wziąć udział, jeśli jest z opiekunem. Cena biletu: 12zł";
+			}else if(document.getElementById("imie").value=="Brad" || document.getElementById("imie").value=="Morgan"){
+				document.getElementById("wynik").innerHTML="Może wziąć udział w seansie za darmo";
+			}else{
+				document.getElementById("wynik").innerHTML="Może wziąć udział. Cena biletu: 18zł";
+			}
 		}
 
 	</script>
