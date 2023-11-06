@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
-
-	<meta charset="utf-8">
-	<title>4 - Instrukcja warunkowa w JavaScript</title>
-	<link href="arkusz-cwiczenia.css" rel="stylesheet">
-	
+    <meta charset="utf-8">
+    <title>4 - Instrukcja warunkowa w JavaScript</title>
+    <link href="arkusz-cwiczenia.css" rel="stylesheet">
 </head>
-
 <body>
+    <label> a = <input type="number" id="a"> </label>
+    <label> b = <input type="number" id="b"> </label>
+    <label> c = <input type="number" id="c"> </label>
+    <input type="submit" value="Informacje o liczbach" onclick="matematyka()">
+    <div id="wynik"></div>
 
-	<label> a = <input type="number" id="a"> </label>
-	<label> b = <input type="number" id="b"> </label>
-	<label> c = <input type="number" id="c"> </label>
-
-	<input type="submit" value="Informacje o liczbach" onclick="matematyka()">
-
-	<div id="wynik"></div>
-	
-	<script>
-	
-		function matematyka()
-		{
-			var a = document.getElementById('a').value;
-			var b = document.getElementById('b').value;
-			var c = document.getElementById('c').value;
-			
-			
-		}
-
-	</script>
-
+    <script>
+        function matematyka(){
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            var c = document.getElementById('c').value;
+            var wynik = document.getElementById('wynik');
+            wynik.innerHTML = `
+                <p>Najmniejsza liczba: ${Math.min(a, b, c)}</p>
+                <p>Największa liczba: ${Math.max(a, b, c)}</p>
+                <p>Wartość bezwzględna a: ${Math.abs(a)}</p>
+                <p>Wartość bezwzględna b: ${Math.abs(b)}</p>
+                <p>Wartość bezwzględna c: ${Math.abs(c)}</p>
+                <p>Liczba a jest ${a % 2 === 0 ? "parzysta" : "nieparzysta"}</p>
+                <p>Liczba b jest ${b % 2 === 0 ? "parzysta" : "nieparzysta"}</p>
+                <p>Liczba c jest ${c % 2 === 0 ? "parzysta" : "nieparzysta"}</p>
+            `;
+        }
+    </script>
 </body>
 </html>
